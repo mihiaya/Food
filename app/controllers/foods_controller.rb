@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   def index
-    
+    @foods = Foodbox.all
   end
 
   def show
@@ -12,7 +12,7 @@ class FoodsController < ApplicationController
   end
 
   def create
-    
+    Foodbox.create(foodbox_params)
   end
 
   def edit
@@ -26,4 +26,10 @@ class FoodsController < ApplicationController
   def destroy
     
   end
+
+  private
+  def foodbox_params
+    params.permit(:nickname, :photo, :restaurant)
+  end
 end
+
