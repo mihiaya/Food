@@ -1,0 +1,9 @@
+<%= form_tag('/foodboxes', method: :post) do %>
+  <h3>
+    投稿する
+  </h3>
+  <input placeholder="Restaurant" type="string" name="restaurant">
+  <input placeholder="Image Url" type="text" name="photo">
+  <textarea cols="30" name="text" rows="10"></textarea>
+  <input type="submit" value="SENT">
+<% end %>
