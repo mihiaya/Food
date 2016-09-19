@@ -30,7 +30,7 @@ class FoodboxesController < ApplicationController
 
   private
   def foodbox_params
-    params.permit(:photo, :restaurant, :comment, :user_id)
+    params.require(:foodbox).permit(:photo, :restaurant, :comment).merge(user_id: current_user.id)
   end
 
   def move_to_index
