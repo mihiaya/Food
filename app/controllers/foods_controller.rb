@@ -29,7 +29,7 @@ class FoodsController < ApplicationController
 
   private
   def foodbox_params
-    params.permit(:nickname, :photo, :restaurant)
+    params.permit(:photo, :restaurant, :text)
   end
 end
 
