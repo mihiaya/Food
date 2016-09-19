@@ -1,4 +1,6 @@
 class FoodsController < ApplicationController
+
+  before_action :move_to_index, except: :index
   def index
     @foods = Foodbox.all
   end
@@ -30,6 +32,10 @@ class FoodsController < ApplicationController
   private
   def foodbox_params
     params.permit(:photo, :restaurant, :text)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end
 

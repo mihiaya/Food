@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Food</title>
+  <title>Eatingram</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <h1>Eatingram</h1>
+  <% if user_signed_in? %>
+    <%= current_user.nickname %>
+      <ul style="list-style:none;">
+        <li>
+          <a href="/foods/new">post</a>
+        </li>
+      </ul>
+  <% else %>
+    <ul style="list-style:none;">
+      <li>
+        <a href="/users/sign_up">sign up</a>
+      </li>
+    </ul>
+  <% end %>
+</header><!-- /header -->
 
 <%= yield %>
 
