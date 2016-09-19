@@ -31,7 +31,7 @@ class FoodsController < ApplicationController
 
   private
   def foodbox_params
-    params.permit(:photo, :restaurant, :text,)
+    params.permit(:photo, :restaurant, :text)
   end
 
   def move_to_index
