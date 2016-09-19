@@ -8,20 +8,14 @@
 </head>
 <body>
 <header>
-  <h1>Eatingram</h1>
+  <h1 href="/">Eatingram</h1>
   <% if user_signed_in? %>
     <%= current_user.nickname %>
-      <ul style="list-style:none;">
-        <li>
-          <a href="/foods/new">post</a>
-        </li>
-      </ul>
+      <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+      <a href="/foods/new">post</a>
   <% else %>
-    <ul style="list-style:none;">
-      <li>
         <a href="/users/sign_up">sign up</a>
-      </li>
-    </ul>
+        <a href="/users/sign_in">sign in</a>
   <% end %>
 </header><!-- /header -->
 
