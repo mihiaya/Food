@@ -17,15 +17,17 @@ class FoodboxesController < ApplicationController
   end
 
   def edit
-    
+    @foodbox = Foodbox.find(params[:id])
   end
 
   def update
-    
+    foodbox=Foodbox.find(params[:id])
+    foodbox.update(foodbox_params) if current_user.id == foodbox.user_id
   end
 
   def destroy
-    
+    foodbox=Foodbox.find(params[:id])
+    foodbox.destroy if current_user.id == foodbox.user_id
   end
 
   private

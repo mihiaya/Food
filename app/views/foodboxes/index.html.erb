@@ -3,4 +3,11 @@
   <%= image_tag foodbox.photo, :size => "300x300" %>
   <p><%= foodbox.user.nickname %></p>
   <p><%= foodbox.comment %></p>
-<% end %>
+
+  <% if user_signed_in? && foodbox.user_id == current_user.id %>
+
+    <%= link_to 'delete', foodbox_path(foodbox.id), method: :delete %>
+    <%= link_to 'edit', edit_foodbox_path(foodbox.id), method: :get %>
+    <% end %>
+
+  <% end %>
