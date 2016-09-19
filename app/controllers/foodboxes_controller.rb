@@ -1,8 +1,7 @@
-class FoodsController < ApplicationController
-
-  before_action :move_to_index, except: :index
+class FoodboxesController < ApplicationController
+   before_action :move_to_index, except: :index
   def index
-    @foods = Foodbox.all
+    @foodboxes = Foodbox.all
   end
 
   def show
@@ -10,7 +9,7 @@ class FoodsController < ApplicationController
   end
 
   def new
-    
+    @foodbox = Foodbox.new
   end
 
   def create
@@ -31,11 +30,10 @@ class FoodsController < ApplicationController
 
   private
   def foodbox_params
-    params.permit(:photo, :restaurant, :comment)
+    params.permit(:photo, :restaurant, :comment, :user_id)
   end
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
 end
-

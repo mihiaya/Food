@@ -1,4 +1,4 @@
-<% @foods.each do |foodbox| %>
+<% @foodboxes.each do |foodbox| %>
   <h2><%= foodbox.restaurant %></h2>
   <%= image_tag foodbox.photo, :size => "300x300" %>
   <p><%= foodbox.user.nickname %></p>

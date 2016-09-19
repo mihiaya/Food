@@ -12,10 +12,10 @@
   <% if user_signed_in? %>
     <%= current_user.nickname %>
       <%= link_to "sign out", destroy_user_session_path, method: :delete %>
-      <a href="/foods/new">post</a>
+      <%= link_to "post", new_foodbox_path, method: :get %>
   <% else %>
-        <a href="/users/sign_up">sign up</a>
-        <a href="/users/sign_in">sign in</a>
+        <%= link_to "sign up", new_user_registration_path, method: :get %>
+        <%= link_to "sign in", new_user_session_path, method: :get %>
   <% end %>
 </header><!-- /header -->
 

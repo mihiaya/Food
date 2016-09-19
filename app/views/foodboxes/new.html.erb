@@ -1,0 +1,28 @@
+<h4>
+  post
+</h4>
+
+<%= form_for (@foodbox) do |f| %>
+
+  <%= f.text_field :restaurant, :placeholder => "restaurant" %>
+
+  <%= f.text_field :photo, :placeholder => "Image URL"%>
+
+  <%= f.text_field :comment %>
+
+  <%= f.submit "SENT" %>
+<% end %>
+<!--     <ul style="list-style:none;">
+      <li>
+        <input placeholder="Restaurant" type="string" name="restaurant">
+      </li>
+      <li>
+        <input placeholder="Image Url" type="text" name="photo">
+      </li>
+      <li>
+        <textarea cols="30" name="comment" rows="10"></textarea>
+      </li>
+      <li>
+        <input type="submit" value="SENT">
+      </li>
+    </ul> -->
