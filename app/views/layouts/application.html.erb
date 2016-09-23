@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-  <h1 href="/">Eatingram</h1>
+  <h1><a href="/">Eatingram</a></h1>
   <% if user_signed_in? %>
     <%= current_user.nickname %>
       <%= link_to "sign out", destroy_user_session_path, method: :delete %>
