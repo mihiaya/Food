@@ -5,7 +5,7 @@ class FoodboxesController < ApplicationController
   end
 
   def show
-    
+    @foodboxes = Foodbox.all
   end
 
   def new
