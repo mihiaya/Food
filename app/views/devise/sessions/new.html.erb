@@ -9,22 +9,22 @@
         <h2>Please Sign In</h2>
         <hr class="colorgraph">
         <div class="form-group">
-                    <%= f.email_field :email, class:"form-control input-lg", placeholder: "Email Address", autofocus: true %>
+          <%= f.email_field :email, class:"form-control input-lg", placeholder: "Email Address", autofocus: true %>
         </div>
         <div class="form-group">
-                    <%= f.password_field :password, class: "form-control input-lg", placeholder:"Password", autocomplete: "off" %>
+          <%= f.password_field :password, class: "form-control input-lg", placeholder:"Password", autocomplete: "off" %>
         </div>
         <% if devise_mapping.rememberable? -%>
         <span class="button-checkbox">
           <button type="button" class="btn" data-color="info">Remember Me</button>
-                    <%= f.check_box :remember_me, checked: "checked", class: "hidden" %>
+            <%= f.check_box :remember_me, checked: "checked", class: "hidden" %>
 <!--           <a href="" class="btn btn-link pull-right">Forgot Password?</a>
- -->        </span>
-            <% end %>
+ -->    </span>
+ <% end %>
         <hr class="colorgraph">
         <div class="row">
           <div class="col-xs-6 col-sm-6 col-md-6">
-                        <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In">
+            <input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In">
           </div>
          <!--  <div class="col-xs-6 col-sm-6 col-md-6">
             <a href="" class="btn btn-lg btn-primary btn-block">Register</a>
