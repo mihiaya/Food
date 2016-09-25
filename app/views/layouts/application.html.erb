@@ -43,7 +43,11 @@
 
   </head>
   <body>
+<<<<<<< HEAD
  <!--    <div id="fh5co-offcanvas">
+=======
+    <div id="fh5co-offcanvas">
+>>>>>>> design
     <a href="#" class="fh5co-close-offcanvas js-fh5co-close-offcanvas"><span><i class="icon-cross3"></i> <span>Close</span></span></a>
     <div class="fh5co-bio">
       <figure>
@@ -79,7 +83,11 @@
         </form>
       </div>
     </div>
+<<<<<<< HEAD
   </div> -->
+=======
+  </div>
+>>>>>>> design
 
   <header id="fh5co-header">
     <div class="container-fluid">
@@ -92,6 +100,7 @@
 
       </div>
     </div>
+<<<<<<< HEAD
 <!--     <% if user_signed_in? %>
       <%= current_user.nickname %> -->
         <%= link_to "sign out", destroy_user_session_path, method: :delete %>
@@ -101,6 +110,17 @@
           <%= link_to "sign up", new_user_registration_path, method: :get %>
           <%= link_to "sign in", new_user_session_path, method: :get %>
     <!-- <% end %> -->
+=======
+  <% if user_signed_in? %>
+    <%= current_user.nickname %>
+      <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+      <%= link_to "post", new_foodbox_path, method: :get %>
+      <%= link_to "mypage", user_path(current_user.id), method: :get %>
+  <% else %>
+        <%= link_to "sign up", new_user_registration_path, method: :get %>
+        <%= link_to "sign in", new_user_session_path, method: :get %>
+  <% end %>
+>>>>>>> design
   </header>
 
 <%= yield %>
