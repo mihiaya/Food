@@ -1,26 +1,32 @@
 
-  <div class="container-fluid">
+<div class="container-fluid">
+  <% @foodboxes.each_slice(4) do |foodboxes| %>
     <div class="row fh5co-post-entry">
-      <% @foodboxes.each do |foodbox| %>
+
+    <% foodboxes.each do |foodbox| %>
       <article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box">
-        <h2 class="fh5co-article-title"><a><%= foodbox.restaurant %></a></h2>
         <figure>
-          <a><%= image_tag foodbox.photo, :class => "img-responsive" %></a> 
+          <a><%= image_tag foodbox.photo, :class => "img-responsive" %></a>
         </figure>
         <span class="fh5co-meta"><a><%= foodbox.comment %></a></span>
-        <span class="fh5co-meta fh5co-date"><%= foodbox.user.nickname %></span>
+        <h2 class="fh5co-article-title"><a><%= foodbox.restaurant %></a></h2>
+        <span class="fh5co-meta fh5co-date"><%= foodbox.user.nickname %>
         <% if user_signed_in? && foodbox.user_id == current_user.id %>
           <%= link_to 'edit', edit_foodbox_path(foodbox.id), method: :get %>
+
           <%= link_to 'delete', foodbox_path(foodbox.id), method: :delete %>
         <% end %>
+      </span>
+      <span class="fh5co-meta fh5co-date"><%= foodbox.created_at.strftime("%Y.%m.%d") %></span>
       </article>
-
     <% end %>
-
-      <div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
-
-      <div class="clearfix visible-xs-block"></div>
-    </div>
   </div>
+  <% end %>
+  <div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block">
+  </div>
+
+  <div class="clearfix visible-xs-block">
+  </div>
+</div>
 
 
