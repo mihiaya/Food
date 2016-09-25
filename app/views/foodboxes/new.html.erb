@@ -1,20 +1,57 @@
-<h4>
-  post
-</h4>
-
 <%= form_for (@foodbox) do |f| %>
+<div class="container">
 
-  <%= f.text_field :restaurant, :placeholder => "restaurant" %><br />
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+      <form role="form">
+      <h2>Post</h2>
+      <hr class="colorgraph">
 
-  <%= f.text_field :photo, :placeholder => "Image URL"%><br />
+      <div class="form-group">
+        <%= f.text_field :restaurant, class:"form-control input-lg", tabindex: "3", placeholder: "Restaurant" %>
+      </div>
+      <div class="form-group">
+         <%= f.text_field :photo, class: "form-control input-lg", placeholder: "Image URL", tabindex: "4"%>
+      </div>
+      <div class="form-group">
+         <%= f.text_field :comment, class: "form-control input-lg", placeholder: "Comment", tabindex: "5"%>
+      </div>
 
-
-  <%= f.text_field :comment, :placeholder => "comment" %><br />
-
-
-  <%= f.submit "SENT" %>
-
-
+      <hr class="colorgraph">
+      <div class="row">
+ <!--        <div class="col-xs-6 col-md-6">
+        <input type="button" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="6"></div> -->
+        <div class="col-xs-6 col-md-6">
+<!--         <a href="#" class="btn btn-success btn-block btn-lg">sent</a> -->
+        <%= f.submit "SENT", class: "btn btn-success btn-block btn-lg" %>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore possimus ipsa porro delectus quidem dolorem ad.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
 
 <% end %>
-
