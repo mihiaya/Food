@@ -1,5 +1,6 @@
 class FoodboxesController < ApplicationController
-   before_action :move_to_index, except: :index
+  before_action :authenticate_user!,  except: :index
+  # before_action :move_to_index, except: :index
   def index
     @foodboxes = Foodbox.all
   end
